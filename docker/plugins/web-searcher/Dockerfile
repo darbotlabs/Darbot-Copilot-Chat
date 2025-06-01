@@ -1,7 +1,7 @@
 # docker build -f docker/plugins/web-searcher/Dockerfile -t web-searcher .
 
 # builder
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS installer-env
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS installer-env
 ARG AZURE_FUNCTION_MASTER_KEY
 WORKDIR /source
 COPY plugins/shared shared
