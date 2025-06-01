@@ -12,7 +12,7 @@ import { useAppDispatch, useAppSelector } from './redux/app/hooks';
 import { RootState } from './redux/app/store';
 import { FeatureKeys } from './redux/features/app/AppState';
 import { addAlert, setActiveUserInfo, setServiceInfo } from './redux/features/app/appSlice';
-import { semanticKernelDarkTheme, semanticKernelLightTheme } from './styles';
+import { retroCyberDarkTheme, retroCyberLightTheme } from './styles';
 
 export const useClasses = makeStyles({
     container: {
@@ -30,10 +30,15 @@ export const useClasses = makeStyles({
         '& h1': {
             paddingLeft: tokens.spacingHorizontalXL,
             display: 'flex',
+            fontFamily: '"Courier New", "Roboto Mono", monospace',
+            textShadow: '0 0 10px rgba(255, 110, 199, 0.5)',
+            letterSpacing: '2px',
         },
         height: '48px',
         justifyContent: 'space-between',
         width: '100%',
+        borderBottom: '2px solid rgba(138, 77, 186, 0.6)',
+        boxShadow: '0 0 15px rgba(138, 77, 186, 0.3)',
     },
     persona: {
         marginRight: tokens.spacingHorizontalXXL,
@@ -125,7 +130,7 @@ const App = () => {
         } // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [instance, isAuthenticated, appState, isMaintenance]);
 
-    const theme = features[FeatureKeys.DarkMode].enabled ? semanticKernelDarkTheme : semanticKernelLightTheme;
+    const theme = features[FeatureKeys.DarkMode].enabled ? retroCyberDarkTheme : retroCyberLightTheme;
 
     return (
         <FluentProvider className="app-container" theme={theme}>
