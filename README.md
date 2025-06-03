@@ -22,7 +22,7 @@ To deploy the sample to Azure, please view [Deploying Chat Copilot](./scripts/de
 
 You will need the following items to run the sample:
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) _(via Setup install.\* script)_
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) _(via Setup install.\* script)_
 - [Node.js](https://nodejs.org/en/download) _(via Setup install.\* script)_
 - [Yarn](https://classic.yarnpkg.com/docs/install) _(via Setup install.\* script)_
 - [Git](https://www.git-scm.com/downloads)
@@ -111,7 +111,7 @@ You will need the following items to run the sample:
    ./install-apt.sh
    ```
 
-   > NOTE: This script uses `apt` to install `dotnet-sdk-8.0`, `nodejs`, and `yarn`.
+   > NOTE: This script uses `apt` to install `dotnet-sdk-9.0`, `nodejs`, and `yarn`.
 
    **macOS**
 
@@ -362,7 +362,7 @@ Backend authentication via Azure AD must be enabled. Detailed instructions for e
 
    # Update and install dotnet
    sudo apt update;
-   sudo apt install --assume-yes dotnet-sdk-8.0;
+   sudo apt install --assume-yes dotnet-sdk-9.0;
    ```
 
 # A note on branches

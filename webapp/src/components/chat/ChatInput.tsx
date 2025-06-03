@@ -32,6 +32,10 @@ const useClasses = makeStyles({
         width: '100%',
         maxWidth: '105em',
         ...shorthands.margin(tokens.spacingVerticalNone, tokens.spacingHorizontalM),
+        ...shorthands.padding(tokens.spacingVerticalM),
+        borderRadius: '8px',
+        background: 'linear-gradient(135deg, rgba(26, 13, 46, 0.9), rgba(74, 43, 124, 0.3))',
+        border: '1px solid rgba(138, 77, 186, 0.4)',
     },
     typingIndicator: {
         maxHeight: '28px',
@@ -47,6 +51,15 @@ const useClasses = makeStyles({
     },
     textarea: {
         maxHeight: '80px',
+        border: '2px solid rgba(138, 77, 186, 0.6)',
+        boxShadow: '0 0 15px rgba(138, 77, 186, 0.3)',
+        backgroundColor: 'rgba(26, 13, 46, 0.8)',
+        color: '#FF6EC7',
+        fontFamily: '"Courier New", "Roboto Mono", monospace',
+        '&:focus': {
+            boxShadow: '0 0 25px rgba(138, 77, 186, 0.7)',
+            border: '2px solid #8B4DBA',
+        },
     },
     controls: {
         display: 'flex',

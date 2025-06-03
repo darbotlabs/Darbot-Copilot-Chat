@@ -10,36 +10,36 @@ import {
     tokens,
 } from '@fluentui/react-components';
 
-export const semanticKernelBrandRamp: BrandVariants = {
-    10: '#060103',
-    20: '#261018',
-    30: '#431426',
-    40: '#591732',
-    50: '#701A3E',
-    60: '#861F4B',
-    70: '#982C57',
-    80: '#A53E63',
-    90: '#B15070',
-    100: '#BC627E',
-    110: '#C6748B',
-    120: '#CF869A',
-    130: '#D898A8',
-    140: '#E0AAB7',
-    150: '#E8BCC6',
-    160: '#EFCFD6',
+export const retroCyberBrandRamp: BrandVariants = {
+    10: '#0A0A0F', // Deep dark purple-black
+    20: '#1A0D2E', // Dark purple
+    30: '#2D1B4E', // Deep violet
+    40: '#4A2B7C', // Purple
+    50: '#6A3D9A', // Bright purple
+    60: '#8B4DBA', // Light purple
+    70: '#AC60D8', // Neon purple
+    80: '#CD74F6', // Bright neon purple
+    90: '#E388FF', // Electric purple
+    100: '#F09CFF', // Pink-purple
+    110: '#FF6EC7', // Hot pink
+    120: '#FF40A6', // Magenta
+    130: '#FF1285', // Electric magenta
+    140: '#FF4A9B', // Bright magenta
+    150: '#FF82C4', // Light magenta
+    160: '#FFBAED', // Very light magenta
 };
 
-export const semanticKernelLightTheme: Theme & { colorMeBackground: string } = {
-    ...createLightTheme(semanticKernelBrandRamp),
-    colorMeBackground: '#e8ebf9',
+export const retroCyberLightTheme: Theme & { colorMeBackground: string } = {
+    ...createLightTheme(retroCyberBrandRamp),
+    colorMeBackground: '#F0F8FF', // Light cyber blue
 };
 
-export const semanticKernelDarkTheme: Theme & { colorMeBackground: string } = {
-    ...createDarkTheme(semanticKernelBrandRamp),
-    colorMeBackground: '#2b2b3e',
+export const retroCyberDarkTheme: Theme & { colorMeBackground: string } = {
+    ...createDarkTheme(retroCyberBrandRamp),
+    colorMeBackground: '#1A0D2E', // Deep dark purple
 };
 
-export const customTokens = themeToTokensObject(semanticKernelLightTheme);
+export const customTokens = themeToTokensObject(retroCyberDarkTheme);
 
 export const Breakpoints = {
     small: (style: GriffelStyle): Record<string, GriffelStyle> => {
@@ -71,6 +71,24 @@ export const SharedStyles: Record<string, GriffelStyle> = {
         ...shorthands.overflow('hidden'),
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
+    },
+    cyberGlow: {
+        boxShadow: '0 0 20px rgba(138, 77, 186, 0.5), 0 0 40px rgba(138, 77, 186, 0.3)',
+        border: '1px solid rgba(138, 77, 186, 0.6)',
+    },
+    cyberButton: {
+        background: 'linear-gradient(45deg, #4A2B7C, #6A3D9A)',
+        border: '2px solid #8B4DBA',
+        boxShadow: '0 0 15px rgba(138, 77, 186, 0.4)',
+        transition: 'all 0.3s ease',
+        '&:hover': {
+            boxShadow: '0 0 25px rgba(138, 77, 186, 0.7)',
+            transform: 'translateY(-2px)',
+        },
+    },
+    retroFont: {
+        fontFamily: '"Courier New", "Roboto Mono", monospace',
+        textShadow: '0 0 10px rgba(255, 110, 199, 0.5)',
     },
 };
 
