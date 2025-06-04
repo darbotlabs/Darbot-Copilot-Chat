@@ -18,6 +18,52 @@ To deploy the sample to Azure, please view [Deploying Chat Copilot](./scripts/de
 
 ![Chat Copilot answering a question](https://learn.microsoft.com/en-us/semantic-kernel/media/chat-copilot-in-action.gif)
 
+# Recent Updates
+
+## Backend Upgrades (.NET 9)
+
+**Framework Upgrade**: Migrated all main projects from .NET 8.0 to .NET 9.0 for enhanced performance and latest features:
+- `webapi/CopilotChatWebApi.csproj`
+- `shared/CopilotChatShared.csproj`
+- `memorypipeline/CopilotChatMemoryPipeline.csproj`
+- `integration-tests/ChatCopilotIntegrationTests.csproj`
+- `tools/importdocument/ImportDocument.csproj`
+
+**Azure Functions Compatibility**: Azure Functions projects remain on .NET 8.0 due to platform limitations.
+
+**Infrastructure Updates**:
+- Updated deployment scripts (`package-webapi.sh`, `package-webapi.ps1`) to target .NET 9
+- Upgraded Docker base images to .NET 9 SDK and runtime
+- Enhanced build compatibility and performance optimizations
+
+## Frontend Transformation (Retro Cyber Modern Theme)
+
+**Fluent UI Upgrade**: Upgraded to Fluent UI v9.64.0 representing the Fluent 2 design system with modern component architecture.
+
+**Cyberpunk Design Implementation**: 
+- **Color Palette**: Deep cyberpunk theme with neon accents
+  - Primary Brand Ramp: Deep dark purple-black (`#0A0A0F`) to Electric purple (`#E388FF`) to Light magenta (`#FFBAED`)
+- **Visual Effects**: 
+  - Neon glows with subtle to intense glow effects
+  - Multi-layer gradients from deep purple to neon magenta
+  - Glowing borders with animated hover states
+  - Retro CRT-style scan lines on main container
+  - Monospace typography using "Courier New" fonts with text shadows
+- **Component Styling**: 
+  - Cyberpunk header with glowing text and metallic effects
+  - Neon-bordered textarea with cyber color scheme
+  - Layered gradient backgrounds with scan-line effects
+  - Interactive elements with enhanced glow hover animations
+
+**Technical Improvements**:
+- Removed deprecated `@fluentui/react-northstar` components
+- Replaced legacy Animation components with CSS-based implementations
+- Enhanced TypeScript imports and compatibility
+- Maintained responsive design across all device sizes
+- Zero build errors with modern tooling
+
+✅ **Validation**: Both backend (.NET 9) and frontend (React + Fluent UI v2) build successfully with all cyberpunk styling rendering correctly.
+
 # Requirements
 
 You will need the following items to run the sample:
@@ -52,7 +98,7 @@ You will need the following items to run the sample:
    .\Install.ps1
    ```
 
-   > NOTE: This script will install `Chocolatey`, `dotnet-8.0-sdk`, `nodejs`, and `yarn`.
+   > NOTE: This script will install `Chocolatey`, `dotnet-9.0-sdk`, `nodejs`, and `yarn`.
 
    > NOTE: If you receive an error that the script is not digitally signed or cannot execute on the system, you may need to [change the execution policy](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.3#change-the-execution-policy) (see list of [policies](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.3#powershell-execution-policies) and [scopes](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.3#execution-policy-scope)) or [unblock the script](https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.3#example-4-unblock-a-script-to-run-it-without-changing-the-execution-policy).
 
