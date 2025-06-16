@@ -1,20 +1,41 @@
-**NOTE**: This is a **sample** application to help you understand how Semantic Kernel and AI can work in Web Applications. This sample is **NOT FOR PRODUCTION** deployments.
+# Darbot Copilot Chat
 
-# Chat Copilot Sample Application
+A powerful, enterprise-ready AI chat application built on Microsoft [Semantic Kernel](https://github.com/microsoft/semantic-kernel) with integrated Model Context Protocol (MCP) support. This application enables seamless integration with external AI services and supports multi-user collaborative AI conversations.
 
-This sample allows you to build your own integrated large language model (LLM) chat copilot. The sample is built on Microsoft [Semantic Kernel](https://github.com/microsoft/semantic-kernel) and has three components:
+## 🚀 Features
 
-1. A frontend application [React web app](./webapp/)
-2. A backend REST API [.NET web API service](./webapi/)
-3. A [.NET worker service](./memorypipeline/) for processing semantic memory.
+- **Multi-User Chat**: Real-time collaborative AI conversations
+- **Model Context Protocol (MCP)**: Connect and interact with external AI services
+- **Document Integration**: Upload and embed documents for context-aware conversations
+- **Plugin System**: Extensible architecture with built-in web search capabilities
+- **Memory Management**: Persistent conversation history and semantic memory
+- **Enterprise Security**: Azure AD integration and comprehensive authentication
+- **Modern UI**: Cyberpunk-themed interface built with Fluent UI
+- **Production Ready**: Comprehensive logging, monitoring, and deployment tools
 
-These quick-start instructions run the sample locally. They can also be found on the official Chat Copilot Microsoft Learn documentation page for [getting started](https://learn.microsoft.com/semantic-kernel/chat-copilot/getting-started).
+## 🏗️ Architecture
 
-To deploy the sample to Azure, please view [Deploying Chat Copilot](./scripts/deploy/README.md) after meeting the [requirements](#requirements) described below.
+The application consists of three main components:
 
-> **IMPORTANT:** This sample is for educational purposes only and is not recommended for production deployments.
+1. **Frontend**: React web application with TypeScript
+2. **Backend**: .NET 8 Web API service
+3. **Memory Pipeline**: .NET worker service for processing semantic memory
 
-> **IMPORTANT:** Each chat interaction will call Azure OpenAI/OpenAI which will use tokens that you may be billed for.
+## 📋 Requirements
+
+### Development Environment
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [Node.js 16+ and Yarn](https://nodejs.org/) or [npm](https://www.npmjs.com/)
+- An IDE or text editor (VS Code, Visual Studio, etc.)
+
+### AI Services (Choose one)
+- **Azure OpenAI**: Recommended for enterprise deployments
+- **OpenAI**: For development and smaller deployments
+
+### Optional Services
+- **Azure Cognitive Search**: For enhanced document search capabilities
+- **Azure Cosmos DB**: For scalable data storage
+- **Application Insights**: For monitoring and telemetry
 
 ![Chat Copilot answering a question](https://learn.microsoft.com/en-us/semantic-kernel/media/chat-copilot-in-action.gif)
 
