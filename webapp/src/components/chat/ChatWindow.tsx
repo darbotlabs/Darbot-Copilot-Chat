@@ -16,7 +16,7 @@ import {
     tokens,
     Tooltip,
 } from '@fluentui/react-components';
-import { Edit24Filled, EditRegular, Map16Regular, Person16Regular } from '@fluentui/react-icons';
+import { Edit24Filled, EditRegular, Map16Regular, Person16Regular, Connector16Regular } from '@fluentui/react-icons';
 import React, { useState } from 'react';
 import { useAppSelector } from '../../redux/app/hooks';
 import { RootState } from '../../redux/app/store';
@@ -27,6 +27,7 @@ import { ParticipantsList } from './controls/ParticipantsList';
 import { ShareBotMenu } from './controls/ShareBotMenu';
 import { EditChatName } from './shared/EditChatName';
 import { DocumentsTab } from './tabs/DocumentsTab';
+import { MCPTab } from './tabs/MCPTab';
 import { PersonaTab } from './tabs/PersonaTab';
 import { PlansTab } from './tabs/PlansTab';
 
@@ -158,6 +159,16 @@ export const ChatWindow: React.FC = () => {
                         >
                             Documents
                         </Tab>
+                        <Tab
+                            data-testid="mcpTab"
+                            id="mcp"
+                            value="mcp"
+                            icon={<Connector16Regular />}
+                            aria-label="MCP Tab"
+                            title="Model Context Protocol"
+                        >
+                            MCP
+                        </Tab>
                         {features[FeatureKeys.PluginsPlannersAndPersonas].enabled && (
                             <>
                                 <Tab
@@ -199,6 +210,7 @@ export const ChatWindow: React.FC = () => {
             </div>
             {selectedTab === 'chat' && <ChatRoom />}
             {selectedTab === 'documents' && <DocumentsTab />}
+            {selectedTab === 'mcp' && <MCPTab />}
             {selectedTab === 'plans' && (
                 <PlansTab
                     setChatTab={() => {
