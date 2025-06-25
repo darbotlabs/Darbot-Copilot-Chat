@@ -27,6 +27,7 @@
     <PackageReference Include="Microsoft.SemanticKernel.Plugins.MsGraph" />
     <PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" />
     <PackageReference Include="Microsoft.SemanticKernel.Plugins.Web" />
+    <PackageReference Include="PuppeteerSharp" />
     <PackageReference Include="SharpToken" />
     <PackageReference Include="Swashbuckle.AspNetCore" />
   </ItemGroup>

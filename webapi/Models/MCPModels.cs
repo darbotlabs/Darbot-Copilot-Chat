@@ -202,3 +202,156 @@ public class MCPTool
     /// </summary>
     public bool IsEnabled { get; set; } = true;
 }
+
+/// <summary>
+/// Browser session information.
+/// </summary>
+public class MCPBrowserSession
+{
+    /// <summary>
+    /// Unique session identifier.
+    /// </summary>
+    public string Id { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Session name.
+    /// </summary>
+    public string Name { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Current URL in the browser.
+    /// </summary>
+    public string CurrentUrl { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Browser session status.
+    /// </summary>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public MCPBrowserStatus Status { get; set; } = MCPBrowserStatus.Closed;
+
+    /// <summary>
+    /// When the session was created.
+    /// </summary>
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    /// <summary>
+    /// When the session was last active.
+    /// </summary>
+    public DateTime LastActiveAt { get; set; } = DateTime.UtcNow;
+
+    /// <summary>
+    /// Browser viewport size.
+    /// </summary>
+    public MCPBrowserViewport? Viewport { get; set; }
+
+    /// <summary>
+    /// Session metadata.
+    /// </summary>
+    public Dictionary<string, object> Metadata { get; set; } = new();
+}
+
+/// <summary>
+/// Browser status enumeration.
+/// </summary>
+public enum MCPBrowserStatus
+{
+    Closed,
+    Starting,
+    Active,
+    Loading,
+    Error
+}
+
+/// <summary>
+/// Browser viewport configuration.
+/// </summary>
+public class MCPBrowserViewport
+{
+    /// <summary>
+    /// Viewport width.
+    /// </summary>
+    public int Width { get; set; } = 1920;
+
+    /// <summary>
+    /// Viewport height.
+    /// </summary>
+    public int Height { get; set; } = 1080;
+
+    /// <summary>
+    /// Device scale factor.
+    /// </summary>
+    public double DeviceScaleFactor { get; set; } = 1.0;
+
+    /// <summary>
+    /// Whether the viewport is mobile.
+    /// </summary>
+    public bool IsMobile { get; set; } = false;
+}
+
+/// <summary>
+/// Browser action request.
+/// </summary>
+public class MCPBrowserActionRequest
+{
+    /// <summary>
+    /// Browser session ID.
+    /// </summary>
+    public string SessionId { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Action type.
+    /// </summary>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public MCPBrowserActionType Action { get; set; }
+
+    /// <summary>
+    /// Action parameters.
+    /// </summary>
+    public Dictionary<string, object> Parameters { get; set; } = new();
+}
+
+/// <summary>
+/// Browser action types.
+/// </summary>
+public enum MCPBrowserActionType
+{
+    Navigate,
+    Click,
+    Type,
+    Scroll,
+    Screenshot,
+    GetContent,
+    GetTitle,
+    WaitForElement,
+    ExecuteScript,
+    Back,
+    Forward,
+    Refresh,
+    Close
+}
+
+/// <summary>
+/// Browser action response.
+/// </summary>
+public class MCPBrowserActionResponse
+{
+    /// <summary>
+    /// Whether the action was successful.
+    /// </summary>
+    public bool Success { get; set; }
+
+    /// <summary>
+    /// Response data.
+    /// </summary>
+    public object? Data { get; set; }
+
+    /// <summary>
+    /// Error message if action failed.
+    /// </summary>
+    public string? Error { get; set; }
+
+    /// <summary>
+    /// Action execution timestamp.
+    /// </summary>
+    public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+}

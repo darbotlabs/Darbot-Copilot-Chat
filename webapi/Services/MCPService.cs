@@ -571,6 +571,146 @@ public class MCPService
                 required = new[] { "chatId" }
             }
         });
+
+        // Browser automation tools
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_navigate",
+            Description = "Navigate to a URL in a browser session",
+            Schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    sessionId = new { type = "string", description = "Browser session ID" },
+                    url = new { type = "string", description = "URL to navigate to" }
+                },
+                required = new[] { "sessionId", "url" }
+            }
+        });
+
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_click",
+            Description = "Click an element in the browser",
+            Schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    sessionId = new { type = "string", description = "Browser session ID" },
+                    selector = new { type = "string", description = "CSS selector of element to click" }
+                },
+                required = new[] { "sessionId", "selector" }
+            }
+        });
+
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_type",
+            Description = "Type text into an input field in the browser",
+            Schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    sessionId = new { type = "string", description = "Browser session ID" },
+                    selector = new { type = "string", description = "CSS selector of input element" },
+                    text = new { type = "string", description = "Text to type" }
+                },
+                required = new[] { "sessionId", "selector", "text" }
+            }
+        });
+
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_screenshot",
+            Description = "Take a screenshot of the current browser page",
+            Schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    sessionId = new { type = "string", description = "Browser session ID" }
+                },
+                required = new[] { "sessionId" }
+            }
+        });
+
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_get_content",
+            Description = "Get the page title and content from the browser",
+            Schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    sessionId = new { type = "string", description = "Browser session ID" }
+                },
+                required = new[] { "sessionId" }
+            }
+        });
+
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_execute_script",
+            Description = "Execute JavaScript code in the browser",
+            Schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    sessionId = new { type = "string", description = "Browser session ID" },
+                    script = new { type = "string", description = "JavaScript code to execute" }
+                },
+                required = new[] { "sessionId", "script" }
+            }
+        });
+
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_wait_for_element",
+            Description = "Wait for an element to appear in the browser",
+            Schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    sessionId = new { type = "string", description = "Browser session ID" },
+                    selector = new { type = "string", description = "CSS selector of element to wait for" },
+                    timeout = new { type = "number", description = "Timeout in milliseconds", defaultValue = 30000 }
+                },
+                required = new[] { "sessionId", "selector" }
+            }
+        });
+
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_create_session",
+            Description = "Create a new browser session",
+            Schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    name = new { type = "string", description = "Name for the browser session" },
+                    initialUrl = new { type = "string", description = "Initial URL to navigate to (optional)" }
+                },
+                required = new[] { "name" }
+            }
+        });
+
+        _tools.Add(new MCPTool
+        {
+            Name = "browser_list_sessions",
+            Description = "List all available browser sessions",
+            Schema = new
+            {
+                type = "object",
+                properties = new { }
+            }
+        });
     }
 
     #endregion

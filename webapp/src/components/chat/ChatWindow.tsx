@@ -16,7 +16,7 @@ import {
     tokens,
     Tooltip,
 } from '@fluentui/react-components';
-import { Edit24Filled, EditRegular, Map16Regular, Person16Regular, Connector16Regular } from '@fluentui/react-icons';
+import { Edit24Filled, EditRegular, Map16Regular, Person16Regular, Connector16Regular, WindowRegular } from '@fluentui/react-icons';
 import React, { useState } from 'react';
 import { useAppSelector } from '../../redux/app/hooks';
 import { RootState } from '../../redux/app/store';
@@ -26,6 +26,7 @@ import { ChatRoom } from './ChatRoom';
 import { ParticipantsList } from './controls/ParticipantsList';
 import { ShareBotMenu } from './controls/ShareBotMenu';
 import { EditChatName } from './shared/EditChatName';
+import { BrowserTab } from './tabs/BrowserTab';
 import { DocumentsTab } from './tabs/DocumentsTab';
 import { MCPTab } from './tabs/MCPTab';
 import { PersonaTab } from './tabs/PersonaTab';
@@ -169,6 +170,16 @@ export const ChatWindow: React.FC = () => {
                         >
                             MCP
                         </Tab>
+                        <Tab
+                            data-testid="browserTab"
+                            id="browser"
+                            value="browser"
+                            icon={<WindowRegular />}
+                            aria-label="Browser Tab"
+                            title="Integrated Browser"
+                        >
+                            Browser
+                        </Tab>
                         {features[FeatureKeys.PluginsPlannersAndPersonas].enabled && (
                             <>
                                 <Tab
@@ -211,6 +222,7 @@ export const ChatWindow: React.FC = () => {
             {selectedTab === 'chat' && <ChatRoom />}
             {selectedTab === 'documents' && <DocumentsTab />}
             {selectedTab === 'mcp' && <MCPTab />}
+            {selectedTab === 'browser' && <BrowserTab />}
             {selectedTab === 'plans' && (
                 <PlansTab
                     setChatTab={() => {
