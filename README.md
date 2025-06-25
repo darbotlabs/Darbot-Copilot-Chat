@@ -6,6 +6,7 @@ A powerful, enterprise-ready AI chat application built on Microsoft [Semantic Ke
 
 - **Multi-User Chat**: Real-time collaborative AI conversations
 - **Model Context Protocol (MCP)**: Connect and interact with external AI services
+- **Integrated Browser**: Full Chrome-based browser with MCP automation support
 - **Document Integration**: Upload and embed documents for context-aware conversations
 - **Plugin System**: Extensible architecture with built-in web search capabilities
 - **Memory Management**: Persistent conversation history and semantic memory
@@ -38,6 +39,8 @@ The application consists of three main components:
 - **Application Insights**: For monitoring and telemetry
 
 ![Chat Copilot answering a question](https://learn.microsoft.com/en-us/semantic-kernel/media/chat-copilot-in-action.gif)
+
+> **🆕 New in this release**: Integrated Chrome browser with full MCP automation support. Control web sessions directly from chat or via external tools. See the [Browser Integration Guide](BROWSER_GUIDE.md) for details.
 
 # Recent Updates
 
@@ -448,6 +451,17 @@ If you would like to learn more about Semantic Kernel and AI, you may also be in
 | [Semantic Kernel Docs](https://github.com/MicrosoftDocs/semantic-kernel-docs)     | The home for Semantic Kernel documentation that appears on the Microsoft learn site.             |
 | [Semantic Kernel Starters](https://github.com/microsoft/semantic-kernel-starters) | Starter projects for Semantic Kernel to make it easier to get started.                           |
 | [Semantic Memory](https://github.com/microsoft/semantic-memory)                   | A service that allows you to create pipelines for ingesting, storing, and querying knowledge.    |
+
+# Documentation
+
+This project includes comprehensive documentation for production deployment and advanced features:
+
+| Guide | Description |
+| ----- | ----------- |
+| [Browser Integration Guide](BROWSER_GUIDE.md) | Complete guide for using the integrated Chrome browser with MCP automation |
+| [MCP Integration Guide](MCP_GUIDE.md) | Model Context Protocol setup, configuration, and usage |
+| [Production Deployment Guide](PRODUCTION.md) | Enterprise deployment, security, and scaling considerations |
+| [Security Guide](SECURITY_GUIDE.md) | Security best practices and configuration guidelines |
 
 ## Join the community
 
