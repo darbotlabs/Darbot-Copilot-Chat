@@ -64,6 +64,8 @@ public sealed class Program
         // Add in the rest of the services.
         builder.Services
             .AddMaintenanceServices()
+            .AddSingleton<MCPService>() // Add MCP service
+            .AddSingleton<IBrowserService, BrowserService>() // Add browser service
             .AddEndpointsApiExplorer()
             .AddSwaggerGen()
             .AddCorsPolicy(builder.Configuration)
