@@ -21,7 +21,8 @@ const useClasses = makeStyles({
             left: '0',
             right: '0',
             bottom: '0',
-            background: 'repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(138, 77, 186, 0.1) 100px)',
+            background:
+                'repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(138, 77, 186, 0.1) 100px)',
             pointerEvents: 'none',
         },
     },

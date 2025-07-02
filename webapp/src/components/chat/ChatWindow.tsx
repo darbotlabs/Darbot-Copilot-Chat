@@ -16,7 +16,7 @@ import {
     tokens,
     Tooltip,
 } from '@fluentui/react-components';
-import { Edit24Filled, EditRegular, Map16Regular, Person16Regular } from '@fluentui/react-icons';
+import { Edit24Filled, EditRegular, Map16Regular, Person16Regular, Connector16Regular, WindowRegular } from '@fluentui/react-icons';
 import React, { useState } from 'react';
 import { useAppSelector } from '../../redux/app/hooks';
 import { RootState } from '../../redux/app/store';
@@ -26,7 +26,9 @@ import { ChatRoom } from './ChatRoom';
 import { ParticipantsList } from './controls/ParticipantsList';
 import { ShareBotMenu } from './controls/ShareBotMenu';
 import { EditChatName } from './shared/EditChatName';
+import { BrowserTab } from './tabs/BrowserTab';
 import { DocumentsTab } from './tabs/DocumentsTab';
+import { MCPTab } from './tabs/MCPTab';
 import { PersonaTab } from './tabs/PersonaTab';
 import { PlansTab } from './tabs/PlansTab';
 
@@ -158,6 +160,26 @@ export const ChatWindow: React.FC = () => {
                         >
                             Documents
                         </Tab>
+                        <Tab
+                            data-testid="mcpTab"
+                            id="mcp"
+                            value="mcp"
+                            icon={<Connector16Regular />}
+                            aria-label="MCP Tab"
+                            title="Model Context Protocol"
+                        >
+                            MCP
+                        </Tab>
+                        <Tab
+                            data-testid="browserTab"
+                            id="browser"
+                            value="browser"
+                            icon={<WindowRegular />}
+                            aria-label="Browser Tab"
+                            title="Integrated Browser"
+                        >
+                            Browser
+                        </Tab>
                         {features[FeatureKeys.PluginsPlannersAndPersonas].enabled && (
                             <>
                                 <Tab
@@ -199,6 +221,8 @@ export const ChatWindow: React.FC = () => {
             </div>
             {selectedTab === 'chat' && <ChatRoom />}
             {selectedTab === 'documents' && <DocumentsTab />}
+            {selectedTab === 'mcp' && <MCPTab />}
+            {selectedTab === 'browser' && <BrowserTab />}
             {selectedTab === 'plans' && (
                 <PlansTab
                     setChatTab={() => {
